@@ -1,113 +1,165 @@
-Introduction
+# Gesture-Based Spotify Controller
 
-This project is my final year capstone for my Machine Learning specialization at Holberton School. The goal is to develop a gesture-based system that allows users to control Spotify using hand movements. By leveraging computer vision and deep learning, the model recognizes gestures and maps them to Spotify functions without requiring an API, relying instead on GUI automation.
+## Introduction
 
-Architecture
+This project is my final year capstone for the Machine Learning specialization at Holberton School. The goal is to develop a gesture-based system that allows users to control Spotify using hand movements. By leveraging computer vision and deep learning, the model recognizes gestures and maps them to Spotify functions without requiring an API, relying instead on GUI automation.
+
+## Architecture
 
 The project consists of the following key components:
 
-Gesture Recognition Model – Uses OpenCV and a deep learning model to classify hand gestures.
+- **Gesture Recognition Model**: Utilizes OpenCV and a deep learning model to classify hand gestures.
+- **Data Collection & Preprocessing**: Captures and processes images to train the model.
+- **Machine Learning Model**: A CNN-based model trained to recognize different hand gestures.
+- **Gesture Mapping System**: Maps recognized gestures to corresponding Spotify commands.
+- **GUI Automation**: Employs PyAutoGUI to simulate keypresses and control Spotify.
 
-Data Collection & Preprocessing – Captures and processes images to train the model.
+## Model Patterns
 
-Machine Learning Model – A CNN-based model trained to recognize different hand gestures.
+The model is built using a Convolutional Neural Network (CNN):
 
-Gesture Mapping System – Maps recognized gestures to corresponding Spotify commands.
+- **Input**: Real-time hand images processed with OpenCV.
+- **Classification**: The model categorizes gestures, each corresponding to a Spotify function.
+- **Real-Time Predictions**: Utilizes a webcam feed for live gesture recognition.
 
-GUI Automation – Uses PyAutoGUI to simulate keypresses and control Spotify.
+## Data Collection & Preprocessing
 
-Model Patterns
+- **Dataset Creation**: Collected images of hand gestures using OpenCV.
+- **Gesture Representation**: Each gesture corresponds to a specific action (e.g., play, pause, next, previous, volume up/down).
+- **Image Processing**: Resized and converted images to grayscale for consistency.
+- **Data Augmentation**: Applied techniques to enhance model robustness.
+- **Dataset Split**: Divided into training and validation sets.
 
-The model is built using a Convolutional Neural Network (CNN).
+## Training Process
 
-The input consists of real-time hand images processed with OpenCV.
+- **Framework**: Trained the CNN model using TensorFlow/Keras.
+- **Optimization**: Employed categorical cross-entropy loss function and Adam optimizer.
+- **Training Duration**: Continued for multiple epochs until achieving high accuracy.
 
-The model classifies gestures into different categories, each corresponding to a Spotify function.
-
-Predictions are made in real-time using a webcam feed.
-
-Data Collection & Preprocessing
-
-A dataset of hand gestures was collected using OpenCV.
-
-Each gesture represents a different action (play, pause, next, previous, volume up/down, etc.).
-
-Images were resized and converted to grayscale for consistency.
-
-Data augmentation techniques were applied to improve model robustness.
-
-The dataset was split into training and validation sets.
-
-Training Process
-
-The CNN model was trained using TensorFlow/Keras.
-
-Categorical cross-entropy loss function and Adam optimizer were used.
-
-The model was trained for multiple epochs until achieving high accuracy.
-
-Custom Data Collection
+## Custom Data Collection
 
 Users can collect their own hand gesture samples and assign them to specific Spotify functions:
 
-Run the data_collection.py script to capture images of custom gestures.
+1. **Run the Data Collection Script**: Execute `data_collection.py` to capture images of custom gestures.
+2. **Labeling**: Assign labels to each gesture corresponding to the desired action.
+3. **Retraining**: Use the collected dataset to retrain the CNN model.
+4. **Update Mappings**: Modify the gesture-to-action mapping in `config.py` to reflect the new gestures.
 
-Label each gesture according to the action it should trigger.
+## Gesture Mapping
 
-Use the collected dataset to retrain the CNN model.
+Each recognized gesture is mapped to a corresponding Spotify function using PyAutoGUI to send keyboard shortcuts:
 
-Update the gesture-to-action mapping in config.py to reflect the new gestures.
+- ✋ **Open palm** → Play/Pause
+- 👆 **One finger** → Next track
+- ✌️ **Two fingers** → Previous track
+- 🤘 **Rock sign** → Increase volume
+- 👊 **Fist** → Decrease volume
 
-Gesture Mapping
+## Dependencies
 
-Each recognized gesture is mapped to a corresponding Spotify function.
+- Python 3.x
+- OpenCV
+- TensorFlow/Keras
+- PyAutoGUI
+- NumPy
 
-PyAutoGUI is used to send keyboard shortcuts that control Spotify.
+## How to Run
 
-Example mappings:
+1. **Install Dependencies**:
 
-✋ Open palm → Play/Pause
+   ```bash
+   pip install opencv-python tensorflow keras numpy pyautogui
 
-👆 One finger → Next track
 
-✌️ Two fingers → Previous track
 
-🤘 Rock sign → Increase volume
 
-👊 Fist → Decrease volume
+To enhance the visual hierarchy of your README.md file and make titles more prominent, you can utilize Markdown's heading syntax. Here's how you can structure your README with appropriately sized headings:
 
-Dependencies
+markdown
+Copy
+Edit
+# Gesture-Based Spotify Controller
 
-Python 3.x
+## Introduction
 
-OpenCV
+This project is my final year capstone for the Machine Learning specialization at Holberton School. The goal is to develop a gesture-based system that allows users to control Spotify using hand movements. By leveraging computer vision and deep learning, the model recognizes gestures and maps them to Spotify functions without requiring an API, relying instead on GUI automation.
 
-TensorFlow/Keras
+## Architecture
 
-PyAutoGUI
+The project consists of the following key components:
 
-NumPy
+- **Gesture Recognition Model**: Utilizes OpenCV and a deep learning model to classify hand gestures.
+- **Data Collection & Preprocessing**: Captures and processes images to train the model.
+- **Machine Learning Model**: A CNN-based model trained to recognize different hand gestures.
+- **Gesture Mapping System**: Maps recognized gestures to corresponding Spotify commands.
+- **GUI Automation**: Employs PyAutoGUI to simulate keypresses and control Spotify.
 
-How to Run
+## Model Patterns
 
-Install dependencies:
+The model is built using a Convolutional Neural Network (CNN):
 
-pip install opencv-python tensorflow keras numpy pyautogui
+- **Input**: Real-time hand images processed with OpenCV.
+- **Classification**: The model categorizes gestures, each corresponding to a Spotify function.
+- **Real-Time Predictions**: Utilizes a webcam feed for live gesture recognition.
 
-Run the gesture recognition script:
+## Data Collection & Preprocessing
 
+- **Dataset Creation**: Collected images of hand gestures using OpenCV.
+- **Gesture Representation**: Each gesture corresponds to a specific action (e.g., play, pause, next, previous, volume up/down).
+- **Image Processing**: Resized and converted images to grayscale for consistency.
+- **Data Augmentation**: Applied techniques to enhance model robustness.
+- **Dataset Split**: Divided into training and validation sets.
+
+## Training Process
+
+- **Framework**: Trained the CNN model using TensorFlow/Keras.
+- **Optimization**: Employed categorical cross-entropy loss function and Adam optimizer.
+- **Training Duration**: Continued for multiple epochs until achieving high accuracy.
+
+## Custom Data Collection
+
+Users can collect their own hand gesture samples and assign them to specific Spotify functions:
+
+1. **Run the Data Collection Script**: Execute `data_collection.py` to capture images of custom gestures.
+2. **Labeling**: Assign labels to each gesture corresponding to the desired action.
+3. **Retraining**: Use the collected dataset to retrain the CNN model.
+4. **Update Mappings**: Modify the gesture-to-action mapping in `config.py` to reflect the new gestures.
+
+## Gesture Mapping
+
+Each recognized gesture is mapped to a corresponding Spotify function using PyAutoGUI to send keyboard shortcuts:
+
+- ✋ **Open palm** → Play/Pause
+- 👆 **One finger** → Next track
+- ✌️ **Two fingers** → Previous track
+- 🤘 **Rock sign** → Increase volume
+- 👊 **Fist** → Decrease volume
+
+## Dependencies
+
+- Python 3.x
+- OpenCV
+- TensorFlow/Keras
+- PyAutoGUI
+- NumPy
+
+## How to Run
+
+1. **Install Dependencies**:
+
+   ```bash
+   pip install opencv-python tensorflow keras numpy pyautogui
+Execute the Gesture Recognition Script:
+
+bash
+Copy
+Edit
 python main.py
-
-Use predefined hand gestures to control Spotify.
+Control Spotify: Use predefined hand gestures to interact with Spotify.
 
 Future Improvements
-
-Improve model accuracy with a larger dataset.
-
+Enhance model accuracy with a larger dataset.
 Support for custom gesture mappings.
-
-Integration with more media applications beyond Spotify.
-
+Integration with additional media applications beyond Spotify.
 Conclusion
-
 This project demonstrates how computer vision and machine learning can be combined with GUI automation to create an intuitive, touchless way to control media playback. It serves as an excellent example of how AI can enhance user experience in everyday applications.
