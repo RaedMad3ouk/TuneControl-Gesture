@@ -129,11 +129,16 @@ Users can collect their own hand gesture samples and assign them to specific Spo
 
 Each recognized gesture is mapped to a corresponding Spotify function using PyAutoGUI to send keyboard shortcuts:
 
-- ✋ **Open palm** → Play/Pause
-- 👆 **One finger** → Next track
-- ✌️ **Two fingers** → Previous track
-- 🤘 **Rock sign** → Increase volume
-- 👊 **Fist** → Decrease volume
+
+✋ Open palm → Play
+
+👆 One finger → Next track
+
+👎 Thumb down sign → Decrease volume
+
+👍 Thumb up sign → Increase volume
+
+👊 Fist → Stop
 
 ## Dependencies
 
