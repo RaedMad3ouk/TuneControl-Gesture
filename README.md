@@ -79,5 +79,29 @@ Support for custom gesture mappings.
 Integration with additional media applications beyond Spotify.
 
 
+
+## Accuracy Evaluation
+
+To assess the model's performance, we conducted tests using a separate validation dataset. The results are as follows:
+![image](https://github.com/user-attachments/assets/c3a3f511-382e-48e8-9893-38b3d7ecd1be)
+
+
+
+## Data Collection Techniques
+
+To enhance the robustness of the model, we employed several data augmentation techniques:
+
+- **Flipping**: Horizontal flipping of images to simulate different orientations.
+- **Blurring**: Applying Gaussian blur to images to mimic varying focus conditions.
+- **Noise Addition**: Introducing random noise to images to simulate real-world imperfections.
+
+These techniques enriched the dataset, allowing the model to generalize better to diverse real-world scenarios.
+
+
+
+
+
+
+
 ## Conclusion
 This project demonstrates how computer vision and machine learning can be combined with GUI automation to create an intuitive, touchless way to control media playback. It serves as an excellent example of how AI can enhance user experience in everyday applications.
