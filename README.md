@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project is my final year capstone for the Machine Learning specialization at Holberton School. The goal is to develop a gesture-based system that allows users to control Spotify using hand movements. By leveraging computer vision and deep learning, the model recognizes gestures and maps them to Spotify functions without requiring an API, relying instead on GUI automation.
+This project is my final year capstone for the Machine Learning specialization at Holberton School. The goal is to develop a gesture-based system that allows users to control Spotify or any music player using hand movements. By leveraging computer vision and deep learning, the model recognizes gestures and maps them to Spotify functions without requiring an API, relying instead on GUI automation.
 
 ## Architecture
 
@@ -97,6 +97,7 @@ To enhance the robustness of the model, we employed several data augmentation te
 
 These techniques enriched the dataset, allowing the model to generalize better to diverse real-world scenarios.
 
+![Uploading image.png…]()
 
 
 
