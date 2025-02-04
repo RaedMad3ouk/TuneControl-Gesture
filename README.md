@@ -97,11 +97,6 @@ To enhance the robustness of the model, we employed several data augmentation te
 
 These techniques enriched the dataset, allowing the model to generalize better to diverse real-world scenarios.
 
-![Uploading image.png…]()
-
-
-
-
 
 
 ## Conclusion
